@@ -1,0 +1,7 @@
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+    -moz-binding: url("bindings.xml#tabs-scroll") !important;
+}
+
+#main-window {
+    -moz-binding: url("bindings.xml#ctrlq") !important;
+}

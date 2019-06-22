@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bindings>
 <bindings xmlns="http://www.mozilla.org/xbl">
+    <binding id="tabs-root" extends="chrome://global/content/bindings/scrollbox.xml#arrowscrollbox">
+	<implementation>
+	    <constructor><![CDATA[
+                document.getAnonymousElementByAttribute(
+                    this, "anonid", "scrollbutton-up").hidden = true;
+                document.getAnonymousElementByAttribute(
+                    this, "anonid", "scrollbutton-down").hidden = true;
+
+                let scrollbox = document.getAnonymousElementByAttribute(
+                    this, "anonid", "scrollbox")
+
+                document.getAnonymousElementByAttribute(
+                    scrollbox, "anonid", "scrollbutton-up").hidden = true;
+                document.getAnonymousElementByAttribute(
+                    scrollbox, "anonid", "scrollbutton-down").hidden = true;
+            ]]></constructor>
+        </implementation>
+    </binding>
     <binding id="tabs-scroll" extends="chrome://global/content/bindings/scrollbox.xml#arrowscrollbox">
         <handlers>
             <handler event="wheel"><![CDATA[
